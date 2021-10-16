@@ -1,9 +1,12 @@
 import { MDXRemote } from "next-mdx-remote";
 import { getFileBySlug, getFiles } from "../lib/mdx"
+import styles from '../styles/Home.module.css'
 
 export default function Post({source,frontmatter}) {
     return (
-            <MDXRemote {...source}/>
+            <main className={styles.main}>
+                <MDXRemote {...source}/>
+            </main>
     )
 }
 
