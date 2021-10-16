@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link' 
 
@@ -14,7 +13,12 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>This is myblog, currently under construction</h1>
+        <h1 className={styles.title}>¡Welcome to JLLB's blog!</h1>
+        <h2>Currently under construction</h2>
+        <p>
+          In this blog I will be sharing the techy stuff I find on a daily basis working as
+          cloud developer, and at the same time I will learn more about web development.
+        </p>
         <div className={styles.grid}>
         {posts.map(post => (
             <Link 
@@ -32,7 +36,7 @@ export default function Home({ posts }) {
       </main>
 
       <footer className={styles.footer}>
-          By José Luis López
+          By José Luis López \ joseluislobell@gmail.com
       </footer>
     </div>
   );
