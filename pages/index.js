@@ -13,7 +13,7 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>¡Welcome to JLLB's blog!</h1>
+        <h1 className={styles.title}>¡Welcome to JLLB&apos;s blog!</h1>
         <h2>Currently under construction</h2>
         <p>
           In this blog I will be sharing the techy stuff I find on a daily basis working as
