@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import Link from 'next/link' 
 
 const navLinks = [
@@ -7,7 +7,7 @@ const navLinks = [
   { title: `third`, path: `thirdPost` }
 ];
 
-function MyNavbar() {
+function MyNavbar({languajes,changeLanguaje}) {
   return (
     <>
       <Navbar collapseOnSelect fixed="top" sticky="top" expand="lg" bg="dark" variant="dark">
@@ -23,6 +23,17 @@ function MyNavbar() {
             {navLinks.map(({ title, path }) => {
               return <Link key={path} href={`/${path}`} passHref><Nav.Link >{title}</Nav.Link></Link>;
             })}
+          </Nav>
+          <Nav>
+          <NavDropdown title="languaje" id="basic-nav-dropdown">
+            {languajes.map((languaje) => {
+              return <>
+                <NavDropdown.Item key={languaje} onClick={() => changeLanguaje(languaje)}>
+                  {languaje}
+                </NavDropdown.Item>
+              </>
+            })}
+          </NavDropdown>
           </Nav>
           </Navbar.Collapse>
         </Container>
