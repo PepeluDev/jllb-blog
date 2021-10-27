@@ -1,6 +1,8 @@
 import  { useState } from "react";
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ChakraProvider } from "@chakra-ui/react"
+
 import MyNavbar from '../components/MyNavbar';
 
 import {languajes} from '../texts/texts';
@@ -18,8 +20,10 @@ function MyApp({ Component, pageProps }) {
   }
   return (
     <>
-      <MyNavbar languajes={languajes} changeLanguaje={changeLanguaje}/>
-      <Component {...pageProps} languaje={languaje} />
+      <ChakraProvider>
+        <MyNavbar languajes={languajes} changeLanguaje={changeLanguaje}/>
+        <Component {...pageProps} languaje={languaje} />
+      </ChakraProvider>
   </>
   )
 }

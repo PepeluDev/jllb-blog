@@ -1,15 +1,29 @@
 import { MDXRemote } from "next-mdx-remote";
 import { getFileBySlug, getFiles } from "../lib/mdx"
-import styles from '../styles/Home.module.css'
+import {Container, Text, UnorderedList,OrderedList, ListItem, Image} from "@chakra-ui/react"
 
 import {texts} from '../texts/texts';
 
+const components={
+    h1: (props) => <Text fontSize="4xl" {...props}/>,
+    h2: (props) => <Text fontSize="2xl" {...props}/>,
+    p : (props) => <Text fontSize="md" align="justify" {...props}/>,
+    ul: (props) => <UnorderedList {...props}/>,
+    li: (props) => <ListItem {...props}/>,
+    ol: (props) => <OrderedList {...props}/>,
+    img: (props) => <Image mt="3" mb="3" {...props}/>,
+}
+
 export default function Post({source,frontmatter,languaje}) {
     return (
-            <main className={styles.main}>
-                <h1>{texts.greetings[languaje]}</h1>
-                <MDXRemote {...source}/>
-            </main>
+            <Container
+                maxWidth="container.md"
+                padding="6"
+                background="gray.50">
+                <Text fontSize="xs" align="right">{frontmatter.date}</Text>
+                <Text fontSize="6xl">{frontmatter.tittle}</Text>
+                <MDXRemote {...source} components={components}/>
+            </Container>
     )
 }
 
