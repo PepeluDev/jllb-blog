@@ -14,7 +14,7 @@ function MyNavbar({languajes,changeLanguaje}) {
         <Container>
         <Link href="/" passHref>
             <Navbar.Brand href="#home">
-                JLLB Blog
+                JLLB.io
                 </Navbar.Brand>
             </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

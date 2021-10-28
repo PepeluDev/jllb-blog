@@ -3,7 +3,8 @@ import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ChakraProvider } from "@chakra-ui/react"
 
-import MyNavbar from '../components/MyNavbar';
+import MyNavbar from '../components/navbar/MyNavbar';
+import MyFooter from '../components/footer/MyFooter';
 
 import {languajes} from '../texts/texts';
 
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
       <ChakraProvider>
         <MyNavbar languajes={languajes} changeLanguaje={changeLanguaje}/>
         <Component {...pageProps} languaje={languaje} />
+        <MyFooter languaje={languaje}/>
       </ChakraProvider>
   </>
   )
