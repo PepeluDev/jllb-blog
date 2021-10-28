@@ -27,11 +27,14 @@ function MyNavbar({languajes,changeLanguaje}) {
           <Nav>
           <NavDropdown title="languaje" id="basic-nav-dropdown">
             {languajes.map((languaje) => {
-              return <>
-                <NavDropdown.Item key={languaje} onClick={() => changeLanguaje(languaje)}>
+              return (
+                <NavDropdown.Item
+                  key={languaje}
+                  onClick={() => changeLanguaje(languaje)}
+                >
                   {languaje}
                 </NavDropdown.Item>
-              </>
+              );
             })}
           </NavDropdown>
           </Nav>
