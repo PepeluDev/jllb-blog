@@ -2,6 +2,8 @@ export const languajes = ["en","es"]
 export const texts = {
   authorpicture:
     'https://media-exp1.licdn.com/dms/image/C4D03AQE_TZR7ksE3Aw/profile-displayphoto-shrink_800_800/0/1625553620807?e=1640822400&v=beta&t=hNmvVQf6pqtVUSs6rbK1FHrk69RMfqZCDMZdxTnAUe0',
+  tittle: 'JLLB.io',
+  description: 'Jose Luis López Bellido Blog',
   index: {
     greetings: {
       en: 'Techy Blog',

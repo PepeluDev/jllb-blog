@@ -1,6 +1,5 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 import {
   Container,
@@ -77,6 +76,6 @@ export default function Home({ posts, languaje }) {
 export async function getStaticProps() {
   const posts = await getAllfilesMetadata();
   return {
-    props: {posts},
+    props: { posts },
   };
 }
