@@ -35,7 +35,7 @@ export default function Home({ posts, languaje }) {
       <Text align='justify'>{texts.index.description[languaje]}</Text>
       <Image
         borderRadius='full'
-        src='https://media-exp1.licdn.com/dms/image/C4D03AQE_TZR7ksE3Aw/profile-displayphoto-shrink_800_800/0/1625553620807?e=1640822400&v=beta&t=hNmvVQf6pqtVUSs6rbK1FHrk69RMfqZCDMZdxTnAUe0'
+        src={texts.authorpicture}
         alt='Picture of the author'
         boxSize='250px'
         mt='3'
