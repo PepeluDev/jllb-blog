@@ -1,43 +1,48 @@
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import Link from 'next/link' 
 
-const navLinks = [
-  { title: `first`, path: `firstPost` },
-  { title: `second`, path: `secondPost` },
-  { title: `third`, path: `thirdPost` }
-];
+const navLinks = [{ title: `Posts`, path: `/#latestposts` }];
 
-function MyNavbar({languajes,changeLanguaje}) {
+function MyNavbar({ languajes, changeLanguaje }) {
   return (
     <>
-      <Navbar collapseOnSelect fixed="top" sticky="top" expand="lg" bg="dark" variant="dark">
+      <Navbar
+        collapseOnSelect
+        fixed='top'
+        sticky='top'
+        expand='lg'
+        bg='dark'
+        variant='dark'
+      >
         <Container>
-        <Link href="/" passHref>
-            <Navbar.Brand href="#home">
-                JLLB.io
-                </Navbar.Brand>
-            </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {navLinks.map(({ title, path }) => {
-              return <Link key={path} href={`/${path}`} passHref><Nav.Link >{title}</Nav.Link></Link>;
-            })}
-          </Nav>
-          <Nav>
-          <NavDropdown title="languaje" id="basic-nav-dropdown">
-            {languajes.map((languaje) => {
-              return (
-                <NavDropdown.Item
-                  key={languaje}
-                  onClick={() => changeLanguaje(languaje)}
-                >
-                  {languaje}
-                </NavDropdown.Item>
-              );
-            })}
-          </NavDropdown>
-          </Nav>
+          <Link href='/' passHref>
+            <Navbar.Brand href='#home'>JLLB.io</Navbar.Brand>
+          </Link>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav'>
+            <Nav className='me-auto'>
+              {navLinks.map(({ title, path }) => {
+                return (
+                  <Link key={path} href={path} passHref>
+                    <Nav.Link>{title}</Nav.Link>
+                  </Link>
+                );
+              })}
+            </Nav>
+            <Nav>
+              <NavDropdown title='languaje' id='basic-nav-dropdown'>
+                {languajes.map((languaje) => {
+                  return (
+                    <NavDropdown.Item
+                      key={languaje}
+                      onClick={() => changeLanguaje(languaje)}
+                    >
+                      {languaje}
+                    </NavDropdown.Item>
+                  );
+                })}
+              </NavDropdown>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

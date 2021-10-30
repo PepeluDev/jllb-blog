@@ -44,7 +44,9 @@ export default function Home({ posts, languaje }) {
         <Text align='justify'>{texts.index.aboutme[languaje]}</Text>
       </Container>
       <Container maxWidth='container.lg' padding='4'>
-        <Text fontSize='4xl'>Posts:</Text>
+        <Text id='latestposts' fontSize='4xl'>
+          Posts:
+        </Text>
         <VStack
           divider={<StackDivider borderColor='gray.200' />}
           spacing={4}
