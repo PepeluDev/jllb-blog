@@ -1,19 +1,7 @@
-import styles from '../styles/Home.module.css';
-import Link from 'next/link';
-
-import {
-  Container,
-  Text,
-  UnorderedList,
-  OrderedList,
-  ListItem,
-  Image,
-  StackDivider,
-  VStack,
-  Box,
-} from '@chakra-ui/react';
+import { Container, Text, Image } from '@chakra-ui/react';
 
 import { texts } from '../texts/texts';
+import MyPostList from '../components/list/MyPostList';
 
 import { getAllfilesMetadata } from '../lib/mdx';
 
@@ -43,34 +31,7 @@ export default function Home({ posts, languaje }) {
       <Container maxWidth='container.lg' padding='6' centerContent>
         <Text align='justify'>{texts.index.aboutme[languaje]}</Text>
       </Container>
-      <Container maxWidth='container.lg' padding='4'>
-        <Text id='latestposts' fontSize='4xl'>
-          Posts:
-        </Text>
-        <VStack
-          divider={<StackDivider borderColor='gray.200' />}
-          spacing={4}
-          align='stretch'
-        >
-          {posts.map((post) => (
-            <Link key={post.slug} href={`/${post.slug}`}>
-              <Box
-                as='button'
-                borderRadius='md'
-                p='3'
-                bg='#DBF5F0'
-                _hover={{
-                  background: 'white',
-                }}
-              >
-                <Text fontSize='xl'>{post.tittle}</Text>
-                <Text fontSize='xs'>{post.date}</Text>
-                <Text align='left'>{post.description}</Text>
-              </Box>
-            </Link>
-          ))}
-        </VStack>
-      </Container>
+      <MyPostList id='latestposts' posts={posts} />
     </Container>
   );
 }
