@@ -13,13 +13,13 @@ export default function Home({ posts, languaje }) {
       background='gray.50'
       centerContent
     >
-      <Text fontSize='6xl' align='justify'>
+      <Text fontSize='6xl' align='center'>
         {texts.index.greetings[languaje]}
       </Text>
-      <Text color='red' align='justify'>
+      <Text color='red' align='center'>
         DISCLAIMER: This website is currently UNDER CONSTRUCTION.
       </Text>
-      <Text align='justify'>{texts.index.description[languaje]}</Text>
+      <Text align='center'>{texts.index.description[languaje]}</Text>
       <Image
         borderRadius='full'
         src={texts.authorpicture}
