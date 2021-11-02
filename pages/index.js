@@ -26,7 +26,7 @@ export default function Home({ posts, languaje }) {
         borderRadius='full'
         src={texts.authorpicture}
         alt='Picture of the author'
-        boxSize='250px'
+        boxSize='220px'
         mt='3'
         mb='3'
       />
