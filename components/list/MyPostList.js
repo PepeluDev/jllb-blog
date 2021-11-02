@@ -1,11 +1,20 @@
 import Link from 'next/link';
 
-import { Container, Text, StackDivider, VStack, Box } from '@chakra-ui/react';
+import {
+  Container,
+  Heading,
+  Text,
+  StackDivider,
+  VStack,
+  Box,
+} from '@chakra-ui/react';
 
 function MyPostList({ posts }) {
   return (
-    <Container maxWidth='container.lg' padding='4'>
-      <Text fontSize='4xl'>Posts:</Text>
+    <Container maxWidth='container.lg' padding='3'>
+      <Heading id='latestposts' align='left' marginBottom='2'>
+        Posts:
+      </Heading>
       <VStack
         divider={<StackDivider borderColor='gray.200' />}
         spacing={4}
@@ -17,14 +26,14 @@ function MyPostList({ posts }) {
               as='button'
               borderRadius='md'
               p='3'
-              bg='#DBF5F0'
+              bg='gray.200'
               _hover={{
                 background: 'white',
               }}
             >
-              <Text align='left' fontSize='xl'>
+              <Heading align='left' marginBottom='1' fontSize='xl'>
                 {post.tittle}
-              </Text>
+              </Heading>
               <Text align='left' fontSize='xs'>
                 {post.date}
               </Text>

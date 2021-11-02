@@ -1,5 +1,6 @@
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import Link from 'next/link' 
+import { Heading, Text } from '@chakra-ui/react';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import Link from 'next/link';
 
 const navLinks = [{ title: `Posts`, path: `/#latestposts` }];
 
@@ -14,9 +15,11 @@ function MyNavbar({ languajes, changeLanguaje }) {
         bg='dark'
         variant='dark'
       >
-        <Container>
+        <Container style={{ fontFamily: 'Oswald' }}>
           <Link href='/' passHref>
-            <Navbar.Brand href='#home'>JLLB.io</Navbar.Brand>
+            <Navbar.Brand href='#home'>
+              <Heading size='md'>JLLB.io</Heading>
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
